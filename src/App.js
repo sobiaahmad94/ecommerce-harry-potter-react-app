@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // page NavBar and pages importe
 import NavBar from './components/NavBar';
-import HomePage from './components/HomePage';
-import ProductsPage from './components/ProductsPage';
-import CheckOutPage from './components/CheckOutPage';
-import ErrorPage from './components/ErrorPage';
+import HomePage from './pages/HomePage';
+import ProductsPage from './pages/ProductsPage';
+import CheckOutPage from './pages/CheckOutPage';
+import ErrorPage from './pages/ErrorPage';
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <NavBar />
 
         <Routes>
-          <Route exact path="/home" element={<HomePage />}></Route>
+          <Route exact path="/" element={<HomePage />}></Route>
           <Route exact path="/products" element={<ProductsPage />}></Route>
           <Route exact path="/check-out" element={<CheckOutPage />}></Route>
           <Route exact path="/*" element={<ErrorPage />}></Route>
