@@ -1,11 +1,22 @@
+import React, {useState} from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import NavBar from './components/NavBar';
+
+
 
 function App() {
   return (
     <>
-      <h1>Harry Potter Shop</h1>
+      <Router>
+        <NavBar />
+
+
+      </Router>
+
     </>
-    
+
   );
 }
 
