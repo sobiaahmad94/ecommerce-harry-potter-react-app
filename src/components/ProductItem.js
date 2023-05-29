@@ -1,23 +1,22 @@
 import React from 'react';
 
-// props.product or {product} deconstructure
-function ProductItem({product}) {
-    return (
-    <>
-    <table className="product-item-table">
-        <tr>
-            <th>Product ID:</th>
-            <th>Product Name:</th>
-            <th>Product Price:</th>
-        </tr>
-        <tr>
-            <td>{product.id}</td>
-            <td>{product.name}</td>
-            <td>{product.price}</td>
-        </tr>
-    </table>
-    </>
+const ProductItem = ({ product, handleAddToCart, isAddedToCart }) => {
+  const handleClick = () => {
+    handleAddToCart(product);
+  };
 
-    )};
+  return (
+    <div>
+      <h3>{product.name}</h3>
+      <p>{product.description}</p>
+      <p>Price: £{product.price}</p>
+      {isAddedToCart ? (
+        <button disabled>Added to Cart</button>
+      ) : (
+        <button onClick={handleClick}>Add to Cart</button>
+      )}
+    </div>
+  );
+};
 
 export default ProductItem;
